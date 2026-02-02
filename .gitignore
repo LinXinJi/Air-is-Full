@@ -8,3 +8,10 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Mkdocs-generated files
+site/
+cultivation-between-realms/site/
+code-on-farm/code-on-farm/
+fly-in-air/fly-in-air/
+walk-to-heart/walk-to-heart/

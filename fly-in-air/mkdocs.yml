@@ -1,1 +1,146 @@
-site_name: My Docs
+# 站点名：功能是指定生成的站点的名称。
+site_name: Fly in Air
+# 站点URL：功能是指定生成的站点的URL。
+site_url: https://linxinji.github.io/Cultivation-Between-Realms/fly-in-air/
+# 站点描述：功能是指定生成的站点的描述。
+site_description: Fly in Air
+# 站点目录：功能是指定生成的站点的目录。
+site_dir: fly-in-air
+
+# 仓库URL：功能是指定生成的站点的仓库URL。
+repo_name: Cultivation-Between-Realms
+repo_url: https://github.com/LinXinJi/Cultivation-Between-Realms
+
+# 主题
+theme:
+  name: material
+  language: zh
+  # logo: 
+  icon:
+    admonition:
+      note: fontawesome/solid/note-sticky
+      abstract: fontawesome/solid/book
+      info: fontawesome/solid/circle-info
+      tip: fontawesome/solid/bullhorn
+      success: fontawesome/solid/check
+      question: fontawesome/solid/circle-question
+      warning: fontawesome/solid/triangle-exclamation
+      failure: fontawesome/solid/bomb
+      danger: fontawesome/solid/skull
+      bug: fontawesome/solid/robot
+      example: fontawesome/solid/flask
+      quote: fontawesome/solid/quote-left
+
+  palette:
+    # 浅色模式
+    - scheme: default
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+    # 深色模式
+    - scheme: slate
+      primary: light blue
+      accent: light blue
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+
+  features:
+    - navigation.footer        # 启用页脚导航
+    - navigation.tabs          # 启用标签页导航
+    - navigation.tabs.sticky   # 启用标签页导航固定
+    - navigation.sections      # 启用目录页导航
+    - navigation.instant       # 启用即时预览
+    - navigation.path          # 启用路径导航
+    - navigation.indexes       # 启用索引页导航
+    - content.code             # 代码高亮
+    - navigation.top           # 导航栏置顶
+    - navigation.sidebar       # 左侧导航：保持默认开启，显示全局导航结构
+    - toc.sidebar              # 右侧目录：启用右侧 TOC 侧边栏
+    - toc.follow               # 让右侧目录跟随页面滚动高亮当前位置:
+    - content.tabs.link        # 启用内容标签页链接
+    - search.suggest           # 启用搜索建议
+    - content.code.copy        # 代码复制按钮
+    - content.tooltips         # 内容悬浮提示
+
+# 导航
+nav:
+  - Home: 
+    - index.md
+  - Blog: 
+    - blog/index.md
+  - About: about.md
+
+# 页脚
+extra:
+  generator: false
+  social: 
+    - icon: fontawesome/brands/github
+      link: https://github.com/LinXinJi/Cultivation-Between-Realms
+    - icon: fontawesome/solid/rss
+      link: https://linxinji.github.io/Cultivation-Between-Realms/feed_rss_created.xml
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/9b23z6h
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/LinXinJi_
+    - icon: fontawesome/brands/steam
+      link: https://steamcommunity.com/id/LinXinJi/
+
+# 插件
+plugins: 
+  - offline      # 离线模式插件
+  - search       # 搜索插件
+  - blog:        # 博客插件
+      blog_dir: blog                                       # 博客主目录
+      post_dir: "{blog}/posts"                             # 文章存放目录
+      post_date_format: full                               # 文章显示的日期格式
+      post_url_date_format: yyyy/MM/dd                     # 文章日期格式
+      post_url_format: "{date}/{slug}"                     # 文章链接格式
+      post_excerpt: optional                               # 显示文章摘要
+      authors_profiles: true                               # 启用作者页面
+      authors_profiles_url_format: "authors/{slug}"        # 作者页面链接格式
+      authors_profiles_name: 作者                          # 作者页面名称  
+  - rss:                                                   # RSS 订阅插件
+      match_path: blog/posts/.* 
+      date_from_meta:
+        as_creation: date
+      categories:
+        - categories
+        - tags 
+
+markdown_extensions:
+  - pymdownx.superfences            # 支持高级代码块
+  - pymdownx.tabbed:                # 标签页
+      alternate_style: true  
+  - pymdownx.highlight:             # 代码高亮
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - abbr
+  - attr_list
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - admonition
+  - pymdownx.details
+
+# 额外的CSS文件
+extra_css:
+  - css/fonts.css
+
+# 额外的JS文件
+extra_javascript:
+  - js/extra.js
