@@ -15,7 +15,7 @@ repo_url: https://github.com/LinXinJi/Cultivation-Between-Realms
 theme:
   name: material
   language: zh
-  # logo: 
+  # logo 
   icon:
     admonition:
       note: fontawesome/solid/note-sticky
@@ -139,8 +139,8 @@ markdown_extensions:
 
 # 额外的CSS文件
 extra_css:
-  - css/fonts.css
+  - ../css/fonts.css
 
 # 额外的JS文件
 extra_javascript:
-  - js/extra.js
+  - ../js/extra.js

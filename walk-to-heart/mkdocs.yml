@@ -139,8 +139,8 @@ markdown_extensions:
 
 # 额外的CSS文件
 extra_css:
-  - css/fonts.css
+  - ../css/fonts.css
 
 # 额外的JS文件
 extra_javascript:
-  - js/extra.js
+  - ../js/extra.js
