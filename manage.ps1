@@ -58,9 +58,10 @@ function Start-SiteServer {
     
     try {
         # 启动开发服务器
+        Write-Host "启动开发服务器..." -ForegroundColor Green
         mkdocs serve
     } catch {
-        Write-Error "启动 $SiteName 失败: $_"
+        Write-Error "启动 $SiteName 失败: $_" -ForegroundColor Red
     } finally {
         # 返回到原始目录
         Set-Location $originalLocation
@@ -76,9 +77,9 @@ function Main {
     switch ($Command) {
         "serve" {
             if ($Site -eq "all") {
-                Write-Host "准备启动所有站点的开发服务器..."
-                Write-Host "注意：每个站点将在单独的终端窗口中启动"
-                Write-Host "按任意键开始..."
+                Write-Host "准备启动所有站点的开发服务器..." -ForegroundColor Green
+                Write-Host "注意：每个站点将在单独的终端窗口中启动" -ForegroundColor Yellow
+                Write-Host "按任意键开始..." -ForegroundColor Green
                 $null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown')
                 
                 # 为每个站点启动一个新的终端窗口
@@ -93,16 +94,16 @@ function Main {
                     Start-Sleep -Seconds 1
                 }
                 
-                Write-Host "`n所有站点的开发服务器已在单独的终端窗口中启动"
-                Write-Host "使用 Ctrl+C 停止各个终端窗口中的服务"
+                Write-Host "`n所有站点的开发服务器已在单独的终端窗口中启动" -ForegroundColor Green
+                Write-Host "使用 Ctrl+C 停止各个终端窗口中的服务" -ForegroundColor Yellow
             } else {
                 # 查找指定的站点
                 $targetSite = $sites | Where-Object { $_.Name -eq $Site }
                 if ($targetSite) {
                     Start-SiteServer -SiteName $targetSite.Name -Description $targetSite.Description
                 } else {
-                    Write-Error "未找到指定的站点: $Site"
-                    Write-Host "可用的站点: $($sites.Name -join ', ')`n"
+                    Write-Error "未找到指定的站点: $Site" -ForegroundColor Red
+                    Write-Host "可用的站点: $($sites.Name -join ', ')`n" -ForegroundColor Yellow
                 }
             }
         }

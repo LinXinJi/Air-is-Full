@@ -2,44 +2,44 @@
 .venv\Scripts\activate.ps1
 
 # 构建 cultivation-between-realms 站点
-Write-Host "构建 cultivation-between-realms 站点" -ForegroundColor Cyan
+Write-Host "构建 cultivation-between-realms 站点" -ForegroundColor Green
 Set-Location cultivation-between-realms
 mkdocs build
 
 # 构建 fly-in-air 站点
-Write-Host "构建 fly-in-air 站点" -ForegroundColor Cyan
+Write-Host "构建 fly-in-air 站点" -ForegroundColor Green
 Set-Location ..\fly-in-air
 mkdocs build
 
 # 构建 walk-to-heart 站点
-Write-Host "构建 walk-to-heart 站点" -ForegroundColor Cyan
+Write-Host "构建 walk-to-heart 站点" -ForegroundColor Green
 Set-Location ..\walk-to-heart
 mkdocs build
 
 # 构建 code-on-farm 站点
-Write-Host "构建 code-on-farm 站点" -ForegroundColor Cyan
+Write-Host "构建 code-on-farm 站点" -ForegroundColor Green
 Set-Location ..\code-on-farm
 mkdocs build
 
 # 清空 site 目录（如果存在）
-Write-Host "清空 site 目录（如果存在）" -ForegroundColor Cyan
 Set-Location ..
 if (Test-Path site) {
+    Write-Host "清空 site 目录" -ForegroundColor Green
     Remove-Item -Path site -Recurse -Force
 }
 
 # 将 .\cultivation-between-realms\site 目录复制到项目根目录
-Write-Host "将 .\cultivation-between-realms\site 目录复制到项目根目录" -ForegroundColor Cyan
+Write-Host "将 .\cultivation-between-realms\site 目录复制到项目根目录" -ForegroundColor Green
 Copy-Item -Path .\cultivation-between-realms\site -Destination . -Recurse -Container
 
 # 将 .\fly-in-air\fly-in-air 目录复制到 ..\site 目录
-Write-Host "将 .\fly-in-air\fly-in-air 目录复制到 ..\site 目录" -ForegroundColor Cyan
+Write-Host "将 .\fly-in-air\fly-in-air 目录复制到 ..\site 目录" -ForegroundColor Green
 Copy-Item -Path .\fly-in-air\fly-in-air -Destination site -Recurse -Container
 
 # 将 .\walk-to-heart\walk-to-heart 目录复制到 ..\site 目录
-Write-Host "将 .\walk-to-heart\walk-to-heart 目录复制到 ..\site 目录" -ForegroundColor Cyan
+Write-Host "将 .\walk-to-heart\walk-to-heart 目录复制到 ..\site 目录" -ForegroundColor Green
 Copy-Item -Path .\walk-to-heart\walk-to-heart -Destination site -Recurse -Container
 
 # 将 .\code-on-farm\code-on-farm 目录复制到 ..\site 目录
-Write-Host "将 .\code-on-farm\code-on-farm 目录复制到 ..\site 目录" -ForegroundColor Cyan
+Write-Host "将 .\code-on-farm\code-on-farm 目录复制到 ..\site 目录" -ForegroundColor Green
 Copy-Item -Path .\code-on-farm\code-on-farm -Destination site -Recurse -Container
