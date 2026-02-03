@@ -1,7 +1,7 @@
 # 站点名：功能是指定生成的站点的名称。
 site_name: Walk to Heart | ❤️
 # 站点URL：功能是指定生成的站点的URL。
-site_url: https://linxinji.github.io/Air-is-Full
+site_url: https://linxinji.github.io/Air-is-Full/walk-to-heart/
 # 站点描述：功能是指定生成的站点的描述。
 site_description: Walk to Heart
 # 站点目录：功能是指定生成的站点的目录。
@@ -79,6 +79,7 @@ nav:
 
 # 页脚
 extra:
+  homepage: https://linxinji.github.io/Air-is-Full/
   generator: false
   social: 
     - icon: fontawesome/brands/github

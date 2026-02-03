@@ -1,0 +1,149 @@
+# 站点名：功能是指定生成的站点的名称。
+site_name: Air is Full | 🥰
+# 站点URL：功能是指定生成的站点的URL。
+site_url: https://linxinji.github.io/Air-is-Full/
+# 站点描述：功能是指定生成的站点的描述。
+site_description: Air is Full
+# 站点目录：功能是指定生成的站点的目录。
+site_dir: site
+
+# 仓库URL：功能是指定生成的站点的仓库URL。
+repo_name: Air is Full
+repo_url: https://github.com/LinXinJi/Air-is-Full
+
+# 版权信息
+copyright: Copyright  &copy;  2026-2030  LinXinJi
+
+# 主题
+theme:
+  name: material
+  language: zh
+  icon:
+    admonition:
+      note: fontawesome/solid/note-sticky
+      abstract: fontawesome/solid/book
+      info: fontawesome/solid/circle-info
+      tip: fontawesome/solid/bullhorn
+      success: fontawesome/solid/check
+      question: fontawesome/solid/circle-question
+      warning: fontawesome/solid/triangle-exclamation
+      failure: fontawesome/solid/bomb
+      danger: fontawesome/solid/skull
+      bug: fontawesome/solid/robot
+      example: fontawesome/solid/flask
+      quote: fontawesome/solid/quote-left
+
+  palette:
+    # 浅色模式
+    - scheme: default
+      primary: deep purple
+      accent: deep purple
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+    # 深色模式
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+
+  features:
+    - navigation.footer        # 启用页脚导航
+    - navigation.tabs          # 启用标签页导航
+    - navigation.tabs.sticky   # 启用标签页导航固定
+    - navigation.sections      # 启用目录页导航
+    - navigation.instant       # 启用即时预览
+    - navigation.path          # 启用路径导航
+    - navigation.indexes       # 启用索引页导航
+    - content.code             # 代码高亮
+    - navigation.top           # 导航栏置顶
+    - navigation.sidebar       # 左侧导航：保持默认开启，显示全局导航结构
+    - toc.sidebar              # 右侧目录：启用右侧 TOC 侧边栏
+    - toc.follow               # 让右侧目录跟随页面滚动高亮当前位置:
+    - content.tabs.link        # 启用内容标签页链接
+    - search.suggest           # 启用搜索建议
+    - content.code.copy        # 代码复制按钮
+    - content.tooltips         # 内容悬浮提示
+
+# 导航
+nav:
+  - Home | 🏠: 
+    - index.md
+  - Cultivation Between Realms | 🤗:
+    - cultivation-between-realms/
+  - Code on Farm | 🌱:
+    - code-on-farm/
+  - Fly in Air | ☁️:
+    - fly-in-air/
+  - Walk to Heart | ❤️:
+    - walk-to-heart/
+  - About | ℹ️: 
+    - about.md  
+
+# 页脚
+extra:
+  homepage: https://linxinji.github.io/Air-is-Full/
+  generator: false
+  social: 
+    - icon: fontawesome/brands/github
+      link: https://github.com/LinXinJi/Cultivation-Between-Realms
+    - icon: fontawesome/solid/rss
+      link: https://linxinji.github.io/Cultivation-Between-Realms/feed_rss_created.xml
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/9b23z6h
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/LinXinJi_
+    - icon: fontawesome/brands/steam
+      link: https://steamcommunity.com/id/LinXinJi/
+
+# 插件
+plugins: 
+  - offline      # 离线模式插件
+  - search       # 搜索插件
+  - multirepo:                                            # 多仓库插件
+      repos:
+        - section: Cultivation Between Realms
+          import_url: ./cultivation-between-realms
+        - section: Code on Farm
+          import_url: ./code-on-farm
+        - section: Fly in Air
+          import_url: ./fly-in-air  
+        - section: Walk to Heart
+          import_url: ./walk-to-heart
+
+markdown_extensions:
+  - pymdownx.superfences            # 支持高级代码块
+  - pymdownx.tabbed:                # 标签页
+      alternate_style: true  
+  - pymdownx.highlight:             # 代码高亮
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - abbr
+  - attr_list
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - admonition
+  - pymdownx.details
+
+# 额外的CSS文件
+extra_css:
+  - css/fonts.css
+
+# 额外的JS文件
+extra_javascript:
+  - js/extra.js

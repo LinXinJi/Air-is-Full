@@ -12,6 +12,9 @@
 .EXAMPLE
     .\manage.ps1 list
     列出所有可用的站点及其端口
+.EXAMPLE
+    .\manage.ps1 start
+    默认启动主站点 air-is-full
 #>
 
 param(
@@ -20,15 +23,17 @@ param(
     [string]$Command,
     
     [Parameter(Position = 1)]
-    [string]$Site = ""
+    # 核心修改1：给Site参数设置默认值为主站点 air-is-full
+    [string]$Site = "air-is-full"
 )
 
 # 定义站点列表（包含端口号）
 $sites = @(
-    @{ Name = "cultivation-between-realms"; Description = "主站点"; Port = 8000 },
-    @{ Name = "code-on-farm"; Description = "Code on Farm 站点"; Port = 8001 },
-    @{ Name = "fly-in-air"; Description = "Fly in Air 站点"; Port = 8002 },
-    @{ Name = "walk-to-heart"; Description = "Walk to Heart 站点"; Port = 8003 }
+    @{ Name = "air-is-full"; Description = "主站点"; Port = 8000 },
+    @{ Name = "cultivation-between-realms"; Description = "Cultivation Between Realms 站点"; Port = 8001 },
+    @{ Name = "code-on-farm"; Description = "Code on Farm 站点"; Port = 8002 },
+    @{ Name = "fly-in-air"; Description = "Fly in Air 站点"; Port = 8003 },
+    @{ Name = "walk-to-heart"; Description = "Walk to Heart 站点"; Port = 8004 }
 )
 
 # 保存当前目录
@@ -50,7 +55,7 @@ function Activate-VirtualEnvironment {
 # 启动站点的开发服务器
 function Start-SiteServer {
     param(
-        [string]$SiteName,
+        [string]$SiteName = "air-is-full",
         [string]$Description,
         [int]$Port
     )
@@ -103,13 +108,8 @@ function Main {
     # 执行命令
     switch ($Command) {
         "start" {
-            if ([string]::IsNullOrEmpty($Site)) {
-                Write-Error "请指定要启动的站点名称" -ForegroundColor Red
-                Write-Host "使用 .\manage.ps1 list 查看可用的站点"
-                return
-            }
-            
-            # 查找指定的站点
+            # 核心修改2：移除空值判断（因为参数已有默认值，不会为空）
+            # 直接查找目标站点（默认就是 air-is-full）
             $targetSite = $sites | Where-Object { $_.Name -eq $Site }
             if ($targetSite) {
                 Start-SiteServer -SiteName $targetSite.Name -Description $targetSite.Description -Port $targetSite.Port

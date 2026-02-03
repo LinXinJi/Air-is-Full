@@ -1,11 +1,11 @@
 # 站点名：功能是指定生成的站点的名称。
 site_name: Cultivation Between Realms 🤗
 # 站点URL：功能是指定生成的站点的URL。
-site_url: https://linxinji.github.io/Air-is-Full
+site_url: https://linxinji.github.io/Air-is-Full/cultivation-between-realms/
 # 站点描述：功能是指定生成的站点的描述。
 site_description: Cultivation Between Realms
 # 站点目录：功能是指定生成的站点的目录。
-site_dir: site
+site_dir: cultivation-between-realms
 
 # 仓库URL：功能是指定生成的站点的仓库URL。
 repo_name: Air is Full
@@ -73,17 +73,12 @@ nav:
     - index.md
   - Blog | 📖: 
     - blog/index.md
-  - Code on Farm | 🌾:
-    - code-on-farm/
-  - Fly in Air | ☁️:
-    - fly-in-air/
-  - Walk to Heart | ❤️:
-    - walk-to-heart/
   - About | ℹ️: 
     - about.md  
 
 # 页脚
 extra:
+  homepage: https://linxinji.github.io/Air-is-Full/
   generator: false
   social: 
     - icon: fontawesome/brands/github
@@ -111,14 +106,6 @@ plugins:
       authors_profiles: true                               # 启用作者页面
       authors_profiles_url_format: "authors/{slug}"        # 作者页面链接格式
       authors_profiles_name: 作者                          # 作者页面名称
-  - multirepo:                                            # 多仓库插件
-      repos:
-        - section: Code on Farm
-          import_url: ./code-on-farm
-        - section: Fly in Air
-          import_url: ./fly-in-air  
-        - section: Walk to Heart
-          import_url: ./walk-to-heart
   - rss:                                                   # RSS 订阅插件
       match_path: blog/posts/.* 
       date_from_meta:

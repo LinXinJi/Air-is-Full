@@ -1,0 +1,36 @@
+@font-face {
+    font-family: "Bock Medium";
+    src: url('../fonts/Bock-Medium-2.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Maple Mono NF";
+    src: url('../fonts/Maple-Mono-NF-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+:root {
+    /* 中英文字体 */
+    --md-text-font: "Bock Medium", "KaiTi";
+    /* 代码字体 */
+    --md-code-font: "Maple Mono NF";
+}
+
+.md-ellipsis {
+    font-weight: 100;
+}
+
+.md-typeset {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.md-typeset .admonition-title, .md-typeset summary {
+    font-weight: 500;
+}
+
+.md-nav {
+    font-size: 0.8rem !important;
+}
+
