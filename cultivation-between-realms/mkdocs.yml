@@ -72,8 +72,10 @@ theme:
 nav:
   - Home | 🏠: 
     - index.md
-  - Blog | 📖: 
+  - Blog | ✒️: 
     - blog/index.md
+  - Note | 📖:
+    - note/index.md
   - About | ℹ️: 
     - about.md  
 
