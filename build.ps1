@@ -1,5 +1,5 @@
 # 激活虚拟环境
-.venv\Scripts\activate.ps1
+.venv\Scripts\activate
 
 # 构建 cultivation-between-realms 站点
 Write-Host "构建 cultivation-between-realms 站点" -ForegroundColor Green
