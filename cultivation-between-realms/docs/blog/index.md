@@ -1,2 +1,1 @@
-# Cultivation Between Realms
-
+# Blog | ✒️

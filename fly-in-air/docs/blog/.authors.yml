@@ -4,7 +4,7 @@ authors:
     description: Blogger  # 作者描述
     avatar: ./authors/assets/cg.png    # 作者头像
     slug: linxinji     # 作者个人资料slug
-    url: https://linxinji.github.io/Cultivation-Between-Realms/           # 作者网站URL
+    url: https://linxinji.github.io/Air-is-Full/           # 作者网站URL
   squidfunk:
     name: Martin Donath
     description: Creator

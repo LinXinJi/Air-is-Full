@@ -36,6 +36,10 @@
     font-weight: 500;
 }
 
+.md-typeset .admonition, .md-typeset details {
+    font-size: 0.84rem;
+}
+
 .md-nav {
     font-size: 0.8rem !important;
 }
