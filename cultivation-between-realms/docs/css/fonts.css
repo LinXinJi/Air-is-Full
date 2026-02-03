@@ -10,9 +10,15 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: "STKAITI";
+    src: url('../fonts/STKAITI.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 :root {
     /* 中英文字体 */
-    --md-text-font: "Bock Medium", "KaiTi";
+    --md-text-font: "Bock Medium", "STKAITI";
     /* 代码字体 */
     --md-code-font: "Maple Mono NF";
 }
