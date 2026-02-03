@@ -18,6 +18,7 @@ copyright: Copyright  &copy;  2026-2030  LinXinJi
 theme:
   name: material
   language: zh
+  content_width: full  # 新增：内容区域占满页面宽度
   icon:
     admonition:
       note: fontawesome/solid/note-sticky

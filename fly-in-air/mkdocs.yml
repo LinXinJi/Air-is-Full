@@ -19,6 +19,7 @@ theme:
   name: material
   language: zh
   # logo: 
+  content_width: full  # 新增：内容区域占满页面宽度
   icon:
     admonition:
       note: fontawesome/solid/note-sticky
