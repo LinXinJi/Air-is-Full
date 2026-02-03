@@ -157,7 +157,7 @@ Invoke-GitCommand -GitArgs @("commit", "-m", $commitMsg, "--quiet") `
 
 # 推送分支到远端
 Write-Host "🔄 推送 $targetBranch 分支到远端..." -ForegroundColor Cyan
-Invoke-GitCommand -GitArgs @("push", "origin", $targetBranch) `
+Invoke-GitCommand -GitArgs @("push", "-f", "origin", $targetBranch) `
     -SuccessMsg "✅ $targetBranch 分支推送成功" `
     -ErrorMsg "错误：推送 $targetBranch 分支到远端失败"
 
