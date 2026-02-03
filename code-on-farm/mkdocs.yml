@@ -11,6 +11,9 @@ site_dir: code-on-farm
 repo_name: Cultivation-Between-Realms
 repo_url: https://github.com/LinXinJi/Cultivation-Between-Realms
 
+# 版权信息
+copyright: Copyright  &copy;  2026-2030  LinXinJi
+
 # 主题
 theme:
   name: material
@@ -67,11 +70,12 @@ theme:
 
 # 导航
 nav:
-  - Home: 
+  - Home | 🏠: 
     - index.md
-  - Blog: 
+  - Blog | 📖: 
     - blog/index.md
-  - About: about.md
+  - About | ℹ️: 
+    - about.md
 
 # 页脚
 extra:
@@ -139,8 +143,8 @@ markdown_extensions:
 
 # 额外的CSS文件
 extra_css:
-  - ../css/fonts.css
+  - css/fonts.css
 
 # 额外的JS文件
 extra_javascript:
-  - ../js/extra.js
+  - js/extra.js

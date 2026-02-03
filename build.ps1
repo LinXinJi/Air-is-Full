@@ -25,7 +25,7 @@ mkdocs build
 Set-Location ..
 if (Test-Path site) {
     Write-Host "清空 site 目录" -ForegroundColor Green
-    Remove-Item -Path site -Recurse -Force
+    Remove-Item -Path site -Recurse -Force 
 }
 
 # 将 .\cultivation-between-realms\site 目录复制到项目根目录

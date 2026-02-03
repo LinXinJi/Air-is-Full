@@ -2,30 +2,33 @@
 .SYNOPSIS
     博客项目管理脚本
 .DESCRIPTION
-    用于管理博客项目的PowerShell脚本，支持启动各个站点的开发服务器
+    用于管理博客项目的PowerShell脚本，支持单独启动和管理每个站点的开发服务器
 .EXAMPLE
-    .\manage.ps1 serve
-    启动所有站点的开发服务器
+    .\manage.ps1 start cultivation-between-realms
+    启动主站点的开发服务器
 .EXAMPLE
-    .\manage.ps1 serve -site cultivation-between-realms
-    只启动指定站点的开发服务器
+    .\manage.ps1 start code-on-farm
+    启动 Code on Farm 站点的开发服务器
+.EXAMPLE
+    .\manage.ps1 list
+    列出所有可用的站点及其端口
 #>
 
 param(
-    [Parameter(Mandatory=$true, Position=0)]
-    [ValidateSet('serve')]
+    [Parameter(Mandatory = $true, Position = 0)]
+    [ValidateSet('start', 'list')]
     [string]$Command,
     
-    [Parameter(Position=1)]
-    [string]$Site = "all"
+    [Parameter(Position = 1)]
+    [string]$Site = ""
 )
 
-# 定义站点列表
+# 定义站点列表（包含端口号）
 $sites = @(
-    @{ Name = "cultivation-between-realms"; Description = "主站点" },
-    @{ Name = "code-on-farm"; Description = "Code on Farm 站点" },
-    @{ Name = "fly-in-air"; Description = "Fly in Air 站点" },
-    @{ Name = "walk-to-heart"; Description = "Walk to Heart 站点" }
+    @{ Name = "cultivation-between-realms"; Description = "主站点"; Port = 8000 },
+    @{ Name = "code-on-farm"; Description = "Code on Farm 站点"; Port = 8001 },
+    @{ Name = "fly-in-air"; Description = "Fly in Air 站点"; Port = 8002 },
+    @{ Name = "walk-to-heart"; Description = "Walk to Heart 站点"; Port = 8003 }
 )
 
 # 保存当前目录
@@ -37,7 +40,8 @@ function Activate-VirtualEnvironment {
         Write-Host "激活虚拟环境..."
         .venv\Scripts\activate
         return $true
-    } else {
+    }
+    else {
         Write-Warning "未找到虚拟环境，将使用系统Python"
         return $false
     }
@@ -47,24 +51,47 @@ function Activate-VirtualEnvironment {
 function Start-SiteServer {
     param(
         [string]$SiteName,
-        [string]$Description
+        [string]$Description,
+        [int]$Port
     )
     
     Write-Host "`n启动 $Description ($SiteName)..."
+    Write-Host "----------------------------------------"
+    Write-Host "站点: $SiteName"
+    Write-Host "描述: $Description"
+    Write-Host "端口: $Port"
+    Write-Host "访问地址: http://localhost:$Port"
     Write-Host "----------------------------------------"
     
     # 切换到站点目录
     Set-Location $SiteName
     
     try {
-        # 启动开发服务器
+        # 启动开发服务器，指定端口
         Write-Host "启动开发服务器..." -ForegroundColor Green
-        mkdocs serve
-    } catch {
+        Write-Host "按 Ctrl+C 停止服务"
+        mkdocs serve --dev-addr=localhost:$Port
+    }
+    catch {
         Write-Error "启动 $SiteName 失败: $_" -ForegroundColor Red
-    } finally {
+    }
+    finally {
         # 返回到原始目录
         Set-Location $originalLocation
+    }
+}
+
+# 列出所有可用的站点
+function List-Sites {
+    Write-Host "`n可用的站点列表"
+    Write-Host "======================================="
+    foreach ($site in $sites) {
+        Write-Host "站点: $($site.Name)"
+        Write-Host "描述: $($site.Description)"
+        Write-Host "端口: $($site.Port)"
+        Write-Host "访问地址: http://localhost:$($site.Port)"
+        Write-Host "命令: .\manage.ps1 start $($site.Name)"
+        Write-Host "----------------------------------------"
     }
 }
 
@@ -75,37 +102,26 @@ function Main {
     
     # 执行命令
     switch ($Command) {
-        "serve" {
-            if ($Site -eq "all") {
-                Write-Host "准备启动所有站点的开发服务器..." -ForegroundColor Green
-                Write-Host "注意：每个站点将在单独的终端窗口中启动" -ForegroundColor Yellow
-                Write-Host "按任意键开始..." -ForegroundColor Green
-                $null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown')
-                
-                # 为每个站点启动一个新的终端窗口
-                foreach ($site in $sites) {
-                    $siteName = $site.Name
-                    $description = $site.Description
-                    
-                    # 在新的终端窗口中启动站点
-                    Start-Process pwsh.exe -ArgumentList "-NoExit", "-Command", ".\manage.ps1 serve $siteName"
-                    
-                    # 等待1秒，避免同时启动多个进程导致的问题
-                    Start-Sleep -Seconds 1
-                }
-                
-                Write-Host "`n所有站点的开发服务器已在单独的终端窗口中启动" -ForegroundColor Green
-                Write-Host "使用 Ctrl+C 停止各个终端窗口中的服务" -ForegroundColor Yellow
-            } else {
-                # 查找指定的站点
-                $targetSite = $sites | Where-Object { $_.Name -eq $Site }
-                if ($targetSite) {
-                    Start-SiteServer -SiteName $targetSite.Name -Description $targetSite.Description
-                } else {
-                    Write-Error "未找到指定的站点: $Site" -ForegroundColor Red
-                    Write-Host "可用的站点: $($sites.Name -join ', ')`n" -ForegroundColor Yellow
-                }
+        "start" {
+            if ([string]::IsNullOrEmpty($Site)) {
+                Write-Error "请指定要启动的站点名称" -ForegroundColor Red
+                Write-Host "使用 .\manage.ps1 list 查看可用的站点"
+                return
             }
+            
+            # 查找指定的站点
+            $targetSite = $sites | Where-Object { $_.Name -eq $Site }
+            if ($targetSite) {
+                Start-SiteServer -SiteName $targetSite.Name -Description $targetSite.Description -Port $targetSite.Port
+            }
+            else {
+                Write-Error "未找到指定的站点: $Site" -ForegroundColor Red
+                Write-Host "可用的站点: $($sites.Name -join ', ')`n" -ForegroundColor Yellow
+                Write-Host "使用 .\manage.ps1 list 查看所有可用的站点"
+            }
+        }
+        "list" {
+            List-Sites
         }
     }
 }
