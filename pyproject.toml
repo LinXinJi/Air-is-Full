@@ -1,5 +1,5 @@
 [project]
-name = "my-mkdocs"
+name = "Air-is-Full"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
@@ -10,4 +10,5 @@ dependencies = [
     "mkdocs-material[imaging]>=9.7.1",
     "mkdocs-multirepo-plugin>=0.8.3",
     "mkdocs-rss-plugin>=1.17.9",
+    "zensical>=0.0.20",
 ]
