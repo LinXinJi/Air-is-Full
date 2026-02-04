@@ -92,7 +92,7 @@ nav:
         - note/玩机指南/玩机习惯/index.md
       - 常用软件: 
         - note/玩机指南/常用软件/index.md
-    - Material-for-Mkdocs: note/Material-for-Mkdocs.md
+        - Typora: note/玩机指南/常用软件/Typora.md
   - About | ℹ️: 
     - about.md
 

@@ -1,198 +1,52 @@
-# Cultivation Between Realms
+---
+title: Mkdocs-Material 教程
+date: 2026-02-04 
+---
 
-欢迎来到我的修行道场！
+# Material for MkDocs 教程
 
-## What is Cultivation Between Realms?
+!!! abstract "Abstract"
 
-Cultivation Between Realms is a game where players explore the world of the Lost Kingdoms, a fantasy setting where the player can create their own kingdoms and colonies. The game is set in a fantasy world where the player can create their own kingdoms and colonies, explore the world, and build their own kingdoms. The game is set in a fantasy world where the player can create their own kingdoms and colonies, explore the world, and build their own kingdoms.
+    本教程结合[官方文档](https://mkdocs.dbtgo.com/setup/)、高质量的[优秀案例](https://note.tonycrane.cc/)以及本人通过此项目的实践和摸索，
+    总结出一套可复现的学习曲线，旨在帮助本人总结和分享经验，希望能为感兴趣的读者提供一定帮助。
 
-## 切换代码
+## 一、最小 demo 快速上手
 
-=== "C"
+!!! cause "Cause"
 
-    ``` c title="Hello-World.C"
-    // C program to print "Hello World"
-    #include <stdio.h>
+    限于作者水平有限，还不熟悉 Linux 和 Mac 平台，因此以下教程基于 Windows 平台进行说明。
+    未来可能有针对其他平台的教程。
 
-    int main(void) {
-      printf("Hello world!\n");
-      return 0;
-    }
-    ```
+### 1.1 开发环境搭建
 
-=== "C++" 
+#### 1.1.1 项目管理
 
-    ``` c++ title="Hello-World.cpp"
-    // C++ program to print "Hello World"
-    #include <iostream>
+!!! info "传统：git"
 
-    int main(void) {
-      std::cout << "Hello world!" << std::endl;
-      return 0;
-    }
-    ```
+    git 是目前最流行的版本控制软件，可以方便地管理项目的变更，大致步骤如下：
+    
+    更多的 git 用法可以参照一下资源：
+    
+    - **我的 git 实践**: 关注我的博客
+    - [Pro Git](https://git-scm.com/book/zh/v2)
 
-## 特定行高亮
+!!! info "高效：jj"
 
-``` py linenums="1"
-def bubble_sort(items):
-    for i in range(len(items)):
-        for j in range(len(items) - 1 - i):
-            if items[j] > items[j + 1]:
-                items[j], items[j + 1] = items[j + 1], items[j]
-```
+    jj 的**核心优势**可概括为 3 点：
 
-``` py hl_lines="2 3"
-def bubble_sort(items):
-    for i in range(len(items)):
-        for j in range(len(items) - 1 - i):
-            if items[j] > items[j + 1]:
-                items[j], items[j + 1] = items[j + 1], items[j]
-```
+    - **更安全**：原子化操作、一键回滚，告别 Git 硬撤销的焦虑。
+    - **更高效**：语义化命令、优化的合并 / 分支管理、更快的大型仓库支持。
+    - **无成本**：完全兼容 Git 生态，平滑迁移，团队协作无阻力。
 
-## 注脚
+    更多的 jj 用法可以一下资源：
+    
+    - **我的 jj 实践**: 关注我的博客
+    - [jj 文档](https://docs.jj-vcs.dev/latest/)
+    - [jj 教程](https://juejin.cn/post/7542696980272807972)
 
-HTML 规范由 W3C 维护。
+!!! info "零门槛：追光几何"
 
-*[HTML]: 超文本标记语言
-*[W3C]: 万维网联盟
+    追光几何更侧重可视化操作，无需命令行，**适合非技术用户**快速上手。
+    Git 适合代码协作与复杂分支管理，追光几何兼顾个人与团队，在设计与文档管理场景更友好。
+    更多追光几何用法可以参照官方文档：[追光几何官网](https://www.evercraft.co/lite/account)
 
-## 链接
-
-[Hover me](https://example.com "I'm a tooltip!")
-
-[Hover me][example]
-
-[example]: https://example.com "I'm a tooltip!"
-
-## 名词定义
-
-`Lorem ipsum dolor sit amet`
-
-:   Sed sagittis eleifend rutrum. Donec vitae suscipit est. Nullam tempus
-    tellus non sem sollicitudin, quis rutrum leo facilisis.
-
-`Cras arcu libero`
-
-:   Aliquam metus eros, pretium sed nulla venenatis, faucibus auctor ex. Proin
-    ut eros sed sapien ullamcorper consequat. Nunc ligula ante.
-
-    Duis mollis est eget nibh volutpat, fermentum aliquet dui mollis.
-    Nam vulputate tincidunt fringilla.
-    Nullam dignissim ultrices urna non auctor.
-
-## 任务列表
-
-- [x] Lorem ipsum dolor sit amet, consectetur adipiscing elit
-- [ ] Vestibulum convallis sit amet nisi a tincidunt
-    * [x] In hac habitasse platea dictumst
-    * [x] In scelerisque nibh non dolor mollis congue sed et metus
-    * [ ] Praesent sed risus massa
-- [ ] Aenean pretium efficitur erat, donec pharetra, ligula non scelerisque
-
-## 网格卡片
-
-<div class="grid cards" markdown>
-
--   :material-clock-fast:{ .lg .middle } __5分钟内设置__
-
-    ---
-
-    使用 [`mkdocs-material`](#) 和 [`pip`](#) 安装并在几分钟内启动
-
-    [:octicons-arrow-right-24: 开始](#)
-
--   :fontawesome-brands-markdown:{ .lg .middle } __这只是Markdown__
-
-    ---
-
-    专注于您的内容，生成一个响应式和可搜索的静态网站
-
-    [:octicons-arrow-right-24: 参考](#)
-
--   :material-format-font:{ .lg .middle } __量身定制__
-
-    ---
-
-    通过几行代码更改颜色、字体、语言、图标、徽标等
-
-    [:octicons-arrow-right-24: 自定义](#)
-
--   :material-scale-balance:{ .lg .middle } __开源，MIT__
-
-    ---
-
-    Material for MkDocs 采用MIT许可，并可在 [GitHub] 上获取
-
-    [:octicons-arrow-right-24: 许可证](#)
-
-</div>
-
-## 格式化
-
-文本可以是 {--删除--}，替换文本 {++添加++}。这也可以组合成 {~~一个~>单个~~} 操作。{==高亮==} 也是可能的 {>>并且可以添加行内评论<<}。
-
-{==
-
-格式化也可以应用于块，通过将开始和结束标签放在单独的行上，并在标签与内容之间添加新行。
-
-==}
-
-- H~2~O
-- A^T^A
-
-## 键盘
-
-++ctrl+alt+del++
-
-## 列表
-
-=== "无序列表"
-
-    * Sed sagittis eleifend rutrum
-    * Donec vitae suscipit est
-    * Nulla tempor lobortis orci
-
-=== "有序列表"
-
-    1. Sed sagittis eleifend rutrum
-    2. Donec vitae suscipit est
-    3. Nulla tempor lobortis orci
-
-## 块提示框
-
-!!! note "Phasellus posuere in sem ut cursus"
-
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
-    nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
-    massa, nec semper lorem quam in massa.
-
-## 内联提示框
-
-=== "左边"
-
-    !!! info inline "Lorem ipsum"
-
-        Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Nulla et euismod nulla.
-        Curabitur feugiat, tortor non consequat
-        finibus, justo purus auctor massa, nec
-        semper lorem quam in massa.
-
-=== "中间"
-
-    !!! info inline middle "Lorem ipsum"
-
-        Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Nulla et euismod nulla.
-        Curabitur feugiat, tortor non conseq
-
-=== "右边"
-
-    !!! info inline end "Lorem ipsum"
-
-        Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Nulla et euismod nulla.
-        Curabitur feugiat, tortor non consequat
-        finibus, justo purus auctor massa, nec
-        semper lorem quam in massa.
