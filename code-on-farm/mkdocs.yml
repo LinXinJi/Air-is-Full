@@ -21,6 +21,7 @@ theme:
   # logo 
   content_width: full  # 新增：内容区域占满页面宽度
   icon:
+    # tag:
     admonition:
       note: fontawesome/solid/note-sticky
       abstract: fontawesome/solid/book
@@ -52,22 +53,24 @@ theme:
         name: Switch to dark mode
 
   features:
+    - tags                     # 启用标签功能
+    - categories               # 启用分类功能
     - navigation.footer        # 启用页脚导航
     - navigation.tabs          # 启用标签页导航
     - navigation.tabs.sticky   # 启用标签页导航固定
-    - navigation.sections      # 启用目录页导航
+    # - navigation.sections      # 启用目录页导航
     - navigation.instant       # 启用即时预览
-    - navigation.path          # 启用路径导航
+    # - navigation.path          # 启用路径导航
     - navigation.indexes       # 启用索引页导航
-    - content.code             # 代码高亮
     - navigation.top           # 导航栏置顶
     - navigation.sidebar       # 左侧导航：保持默认开启，显示全局导航结构
-    - toc.sidebar              # 右侧目录：启用右侧 TOC 侧边栏
-    - toc.follow               # 让右侧目录跟随页面滚动高亮当前位置:
+    - content.code             # 代码高亮
     - content.tabs.link        # 启用内容标签页链接
-    - search.suggest           # 启用搜索建议
     - content.code.copy        # 代码复制按钮
     - content.tooltips         # 内容悬浮提示
+    - toc.sidebar              # 右侧目录：启用右侧 TOC 侧边栏
+    - toc.follow               # 让右侧目录跟随页面滚动高亮当前位置:
+    - search.suggest           # 启用搜索建议
 
 # 导航
 nav:
@@ -77,6 +80,15 @@ nav:
     - blog/index.md
   - Note | 📖:
     - note/index.md
+    - 编程语言: 
+      - note/编程语言/index.md
+      - Python: 
+        - note/编程语言/Python/index.md
+      - PowerShell: 
+        - note/编程语言/PowerShell/index.md
+    - 玩机指南: 
+      - note/玩机指南/index.md
+      - 玩机习惯: note/玩机指南/玩机习惯.md
   - About | ℹ️: 
     - about.md
 
@@ -84,6 +96,7 @@ nav:
 extra:
   homepage: https://linxinji.github.io/Air-is-Full/
   generator: false
+  # tags:
   social: 
     - icon: fontawesome/brands/github
       link: https://github.com/LinXinJi/Cultivation-Between-Realms
@@ -100,6 +113,7 @@ extra:
 plugins: 
   - offline      # 离线模式插件
   - search       # 搜索插件
+  - tags         # 标签插件
   - blog:        # 博客插件
       blog_dir: blog                                       # 博客主目录
       post_dir: "{blog}/posts"                             # 文章存放目录

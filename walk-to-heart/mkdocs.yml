@@ -55,9 +55,9 @@ theme:
     - navigation.footer        # 启用页脚导航
     - navigation.tabs          # 启用标签页导航
     - navigation.tabs.sticky   # 启用标签页导航固定
-    - navigation.sections      # 启用目录页导航
+    # - navigation.sections      # 启用目录页导航
     - navigation.instant       # 启用即时预览
-    - navigation.path          # 启用路径导航
+    # - navigation.path          # 启用路径导航
     - navigation.indexes       # 启用索引页导航
     - content.code             # 代码高亮
     - navigation.top           # 导航栏置顶
@@ -100,6 +100,7 @@ extra:
 plugins: 
   - offline      # 离线模式插件
   - search       # 搜索插件
+  - tags         # 标签插件 
   - blog:        # 博客插件
       blog_dir: blog                                       # 博客主目录
       post_dir: "{blog}/posts"                             # 文章存放目录
