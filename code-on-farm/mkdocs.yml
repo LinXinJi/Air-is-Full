@@ -88,7 +88,11 @@ nav:
         - note/编程语言/PowerShell/index.md
     - 玩机指南: 
       - note/玩机指南/index.md
-      - 玩机习惯: note/玩机指南/玩机习惯.md
+      - 玩机习惯: 
+        - note/玩机指南/玩机习惯/index.md
+      - 常用软件: 
+        - note/玩机指南/常用软件/index.md
+    - Material-for-Mkdocs: note/Material-for-Mkdocs.md
   - About | ℹ️: 
     - about.md
 

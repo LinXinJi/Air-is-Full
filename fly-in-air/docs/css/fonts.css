@@ -36,6 +36,10 @@
     font-weight: 500;
 }
 
+.md-typeset h4 {
+    font-weight: 500;
+}
+
 .md-nav {
     font-size: 0.8rem !important;
 }

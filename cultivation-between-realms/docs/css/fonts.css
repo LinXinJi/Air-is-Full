@@ -32,6 +32,10 @@
     font-weight: 500;
 }
 
+.md-typeset h4 {
+    font-weight: 500;
+}
+
 .md-typeset .admonition-title, .md-typeset summary {
     font-weight: 500;
 }
