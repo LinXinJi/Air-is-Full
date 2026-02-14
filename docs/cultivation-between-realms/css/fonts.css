@@ -52,3 +52,7 @@
 .md-typeset hr {
     border-bottom: .05rem solid var(--md-typeset-a-color);
 }
+
+.md-typeset h1 {
+    color: var(--md-typeset-a-color)
+}
