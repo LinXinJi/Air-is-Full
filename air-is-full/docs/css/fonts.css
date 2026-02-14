@@ -40,3 +40,11 @@
     font-size: 0.8rem !important;
 }
 
+.md-typeset .grid.cards>ol>li, .md-typeset .grid.cards>ul>li, .md-typeset .grid>.card {
+    border: .05rem solid var(--md-typeset-a-color);
+    border-radius: 1.1rem;
+}
+
+.md-typeset hr {
+    border-bottom: .05rem solid var(--md-typeset-a-color);
+}
