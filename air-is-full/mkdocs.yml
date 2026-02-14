@@ -71,14 +71,6 @@ theme:
 nav:
   - Home | 🏠: 
     - index.md
-  - Cultivation Between Realms | 🤗:
-    - cultivation-between-realms/
-  - Code on Farm | 🌱:
-    - code-on-farm/
-  - Fly in Air | ☁️:
-    - fly-in-air/
-  - Walk to Heart | ❤️:
-    - walk-to-heart/
   - About | ℹ️: 
     - about.md  
 
