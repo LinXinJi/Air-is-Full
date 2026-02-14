@@ -51,7 +51,9 @@ theme:
         name: Switch to dark mode
 
   features:
-    - navigation.footer        # 启用页脚导航
+    - tags                     # 启用标签功能
+    - categories               # 启用分类功能
+    # - navigation.footer        # 启用页脚导航
     - navigation.tabs          # 启用标签页导航
     - navigation.tabs.sticky   # 启用标签页导航固定
     # - navigation.sections      # 启用目录页导航
