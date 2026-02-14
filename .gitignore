@@ -10,7 +10,7 @@ wheels/
 .venv
 
 # Mkdocs-generated files
-site/
+air-is-full/air-is-full
 cultivation-between-realms/cultivation-between-realms/
 code-on-farm/code-on-farm/
 fly-in-air/fly-in-air/

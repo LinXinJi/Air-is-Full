@@ -2,9 +2,9 @@
 .venv\Scripts\activate
 
 # 清空 site 目录（如果存在）
-if (Test-Path site) {
-    Write-Host "清空 site 目录" -ForegroundColor Green
-    Remove-Item -Path site -Recurse -Force 
+if (Test-Path docs) {
+    Write-Host "清空 docs 目录" -ForegroundColor Green
+    Remove-Item -Path docs -Recurse -Force 
 }
 
 # 构建主页
@@ -34,22 +34,22 @@ mkdocs build
 
 Set-Location ..
 
-# 将 .\air-is-full\site 目录复制到项目根目录的 site 目录
-Write-Host "将 .\air-is-full\site 目录复制到项目根的 site 目录" -ForegroundColor Green
-Copy-Item -Path .\air-is-full\site -Destination site -Recurse -Container
+# 将 .\air-is-full\air-is-full 目录复制到项目根目录的 docs 目录
+Write-Host "将 .\air-is-full\air-is-full 目录复制到项目根的 docs 目录" -ForegroundColor Green
+Copy-Item -Path .\air-is-full\air-is-full -Destination docs -Recurse -Container
 
 # 将 .\cultivation-between-realms\cultivation-between-realms 目录复制到项目根目录
-Write-Host "将 .\cultivation-between-realms\cultivation-between-realms 目录复制到项目根的 site 目录" -ForegroundColor Green
-Copy-Item -Path .\cultivation-between-realms\cultivation-between-realms -Destination site -Recurse -Container
+Write-Host "将 .\cultivation-between-realms\cultivation-between-realms 目录复制到项目根的 docs 目录" -ForegroundColor Green
+Copy-Item -Path .\cultivation-between-realms\cultivation-between-realms -Destination docs -Recurse -Container
 
-# 将 .\fly-in-air\fly-in-air 目录复制到 site 目录
-Write-Host "将 .\fly-in-air\fly-in-air 目录复制到 site 目录" -ForegroundColor Green
-Copy-Item -Path .\fly-in-air\fly-in-air -Destination site -Recurse -Container
+# 将 .\fly-in-air\fly-in-air 目录复制到 docs 目录
+Write-Host "将 .\fly-in-air\fly-in-air 目录复制到 docs 目录" -ForegroundColor Green
+Copy-Item -Path .\fly-in-air\fly-in-air -Destination docs -Recurse -Container
 
-# 将 .\walk-to-heart\walk-to-heart 目录复制到 site 目录
-Write-Host "将 .\walk-to-heart\walk-to-heart 目录复制到 site 目录" -ForegroundColor Green
-Copy-Item -Path .\walk-to-heart\walk-to-heart -Destination site -Recurse -Container
+# 将 .\walk-to-heart\walk-to-heart 目录复制到 docs 目录
+Write-Host "将 .\walk-to-heart\walk-to-heart 目录复制到 docs 目录" -ForegroundColor Green
+Copy-Item -Path .\walk-to-heart\walk-to-heart -Destination docs -Recurse -Container
 
-# 将 .\code-on-farm\code-on-farm 目录复制到 site 目录
-Write-Host "将 .\code-on-farm\code-on-farm 目录复制到 site 目录" -ForegroundColor Green
-Copy-Item -Path .\code-on-farm\code-on-farm -Destination site -Recurse -Container
+# 将 .\code-on-farm\code-on-farm 目录复制到 docs 目录
+Write-Host "将 .\code-on-farm\code-on-farm 目录复制到 docs 目录" -ForegroundColor Green
+Copy-Item -Path .\code-on-farm\code-on-farm -Destination docs -Recurse -Container
