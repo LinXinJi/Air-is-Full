@@ -94,16 +94,6 @@ extra:
 plugins: 
   - offline      # 离线模式插件
   - search       # 搜索插件
-  - multirepo:                                            # 多仓库插件
-      repos:
-        - section: Cultivation Between Realms
-          import_url: ./cultivation-between-realms
-        - section: Code on Farm
-          import_url: ./code-on-farm
-        - section: Fly in Air
-          import_url: ./fly-in-air  
-        - section: Walk to Heart
-          import_url: ./walk-to-heart
 
 markdown_extensions:
   - pymdownx.superfences            # 支持高级代码块
