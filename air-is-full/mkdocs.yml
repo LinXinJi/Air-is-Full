@@ -55,7 +55,6 @@ theme:
     - navigation.tabs.sticky   # 启用标签页导航固定
     - navigation.sections      # 启用目录页导航
     - navigation.instant       # 启用即时预览
-    - navigation.path          # 启用路径导航
     - navigation.indexes       # 启用索引页导航
     - content.code             # 代码高亮
     - navigation.top           # 导航栏置顶
