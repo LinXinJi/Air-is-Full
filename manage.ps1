@@ -30,7 +30,7 @@ param(
 # 定义站点列表（包含端口号）
 $sites = @(
     @{ Name = "air-is-full"; Description = "主站点"; Port = 8000 },
-    @{ Name = "cultivation-between-realms"; Description = "Cultivation Between Realms 站点"; Port = 8001 },
+    @{ Name = "think-about-it"; Description = "Think about it 站点"; Port = 8001 },
     @{ Name = "code-on-farm"; Description = "Code on Farm 站点"; Port = 8002 },
     @{ Name = "fly-in-air"; Description = "Fly in Air 站点"; Port = 8003 },
     @{ Name = "walk-to-heart"; Description = "Walk to Heart 站点"; Port = 8004 }

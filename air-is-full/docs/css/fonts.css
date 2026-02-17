@@ -18,7 +18,7 @@
 }
 :root {
     /* 中英文字体 */
-    --md-text-font: "Bock Medium", "STKAITI";
+    --md-text-font: "STKAITI";
     /* 代码字体 */
     --md-code-font: "Maple Mono NF";
 }

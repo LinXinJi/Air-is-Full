@@ -122,6 +122,8 @@ plugins:
         - tags 
 
 markdown_extensions:
+  - toc:
+      permalink: "~"
   - pymdownx.superfences            # 支持高级代码块
   - pymdownx.tabbed:                # 标签页
       alternate_style: true  

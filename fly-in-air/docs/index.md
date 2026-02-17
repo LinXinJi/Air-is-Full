@@ -8,7 +8,7 @@
 
 <div class="grid cards" markdown>
 
--   [Cultivation Between Realms][cultivation-between-realms] | 🤗
+-   [Think about it][think-about-it] | 🤗
     
     ---
 
@@ -34,7 +34,7 @@
 
 </div>
 
-[cultivation-between-realms]: https://linxinji.github.io/Air-is-Full/cultivation-between-realms
+[think-about-it]: https://linxinji.github.io/Air-is-Full/think-about-it
 [code-on-farm]: https://linxinji.github.io/Air-is-Full/code-on-farm
 [fly-in-air]: https://linxinji.github.io/Air-is-Full/fly-in-air
 [walk-to-heart]:https://linxinji.github.io/Air-is-Full/walk-to-heart

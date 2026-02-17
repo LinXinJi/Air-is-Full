@@ -1,11 +1,11 @@
 # 站点名：功能是指定生成的站点的名称。
-site_name: Air is Full | 🥰
+site_name: Think about it 🤗
 # 站点URL：功能是指定生成的站点的URL。
-site_url: https://linxinji.github.io/Air-is-Full/
+site_url: https://linxinji.github.io/Air-is-Full/think-about-it/
 # 站点描述：功能是指定生成的站点的描述。
-site_description: Air is Full
+site_description: 思考探讨任何事物的想法
 # 站点目录：功能是指定生成的站点的目录。
-site_dir: air-is-full
+site_dir: think-about-it
 
 # 仓库URL：功能是指定生成的站点的仓库URL。
 repo_name: Air is Full
@@ -37,24 +37,28 @@ theme:
   palette:
     # 浅色模式
     - scheme: default
-      primary: white
-      accent: white
+      primary: deep purple
+      accent: deep purple
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
     # 深色模式
     - scheme: slate
-      primary: black
-      accent: black
+      primary: indigo
+      accent: indigo
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
 
   features:
+    - tags                     # 启用标签功能
+    - categories               # 启用分类功能
+    # - navigation.footer        # 启用页脚导航
     - navigation.tabs          # 启用标签页导航
     - navigation.tabs.sticky   # 启用标签页导航固定
-    - navigation.sections      # 启用目录页导航
+    # - navigation.sections      # 启用目录页导航
     - navigation.instant       # 启用即时预览
+    # - navigation.path          # 启用路径导航
     - navigation.indexes       # 启用索引页导航
     - content.code             # 代码高亮
     - navigation.top           # 导航栏置顶
@@ -72,6 +76,8 @@ nav:
     - index.md
   - Blog | ✒️: 
     - blog/index.md
+  - Note | 📖:
+    - note/index.md
   - About | ℹ️: 
     - about.md  
 
@@ -95,6 +101,7 @@ extra:
 plugins: 
   - offline      # 离线模式插件
   - search       # 搜索插件
+  - tags         # 标签插件
   - blog:        # 博客插件
       blog_dir: blog                                       # 博客主目录
       post_dir: "{blog}/posts"                             # 文章存放目录
@@ -104,14 +111,14 @@ plugins:
       post_excerpt: optional                               # 显示文章摘要
       authors_profiles: true                               # 启用作者页面
       authors_profiles_url_format: "authors/{slug}"        # 作者页面链接格式
-      authors_profiles_name: 作者    
+      authors_profiles_name: 作者                          # 作者页面名称
   - rss:                                                   # RSS 订阅插件
       match_path: blog/posts/.* 
       date_from_meta:
         as_creation: date
       categories:
         - categories
-        - tags                       # 作者页面名称  
+        - tags 
 
 markdown_extensions:
   - toc:
